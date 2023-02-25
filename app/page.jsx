@@ -1,14 +1,14 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "./page.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
+        <p className="bg-fuchsia-500 hover:bg-red-700">
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.js</code>
         </p>
@@ -18,7 +18,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -61,6 +61,7 @@ export default function Home() {
         </a>
 
         <a
+          // eslint-disable-next-line max-len
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
           target="_blank"
@@ -87,5 +88,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
