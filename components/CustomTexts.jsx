@@ -1,9 +1,34 @@
 "use client";
 
-export function TypingText() {
-  return <p>Typing Text</p>;
+import { motion } from "framer-motion";
+
+import { textContainer, textVariant2 } from "../utils/motion";
+
+export function TypingText({ title, textStyles }) {
+  return (
+    <motion.p
+      variants={textContainer}
+      className={`font-normal text-[14px] text-secondary-white ${textStyles}`}
+    >
+      {Array.from(title).map((letter, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <motion.span variants={textVariant2} key={index}>
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </motion.p>
+  );
 }
 
-export function TitleText() {
-  return <h2>Title Text</h2>;
+export function TitleText({ title, textStyles }) {
+  return (
+    <motion.h2
+      variants={textVariant2}
+      initial="hidden"
+      whileInView="show"
+      className={`mt-[9px] font-fold md:text-[64px] text-[40px] text-white ${textStyles}`}
+    >
+      {title}
+    </motion.h2>
+  );
 }
